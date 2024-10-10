@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:facturation_app/pages.dart/crear-factura.dart';
+import 'package:facturation_app/pages.dart/factura.dart';
 
 // Pantalla "Planta" con dos botones grandes
 class PlantaScreen extends StatelessWidget {
@@ -26,7 +28,12 @@ class PlantaScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Acción del primer botón
-                  print('Botón 1 presionado');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CreateFacturaApp(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey[700],
@@ -45,7 +52,12 @@ class PlantaScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Acción del segundo botón
-                  print('Enviar a crear facturas');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FacturaApp(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey[700],

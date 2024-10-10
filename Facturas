@@ -1,0 +1,198 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: FacturaPage(),
+    );
+  }
+}
+
+// Página de facturas
+class FacturaPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('LOGO EMPRESA'),
+            Text('FACTURAS'),
+            Icon(Icons.menu),
+          ],
+        ),
+      ),
+      body: Column(
+        children: [
+          // Formato de Factura
+          Expanded(
+            flex: 8,
+            child: Container(
+              color: Colors.grey[400],
+              child: Center(
+                child: Text(
+                  'FORMATO FACTURA',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ),
+          // Autorización
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'AUTORIZACION',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            ),
+          ),
+          // Botones de No Concuerdan y Concuerdan
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Navegar a la página de No Conformidad
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NoConformidadPage(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey[400],
+                  ),
+                  child: Text('NO CONCUERDAN'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Navegar a la página de No hay facturas
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NoFacturasPage(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey[400],
+                  ),
+                  child: Text('CONCUERDAN'),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Página de acta de no conformidad
+class NoConformidadPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('LOGO EMPRESA'),
+            Text('FACTURAS'),
+            Icon(Icons.menu),
+          ],
+        ),
+      ),
+      body: Column(
+        children: [
+          // Título
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'ACTA DE NO CONFORMIDAD',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          // Formato de acta de no conformidad
+          Expanded(
+            flex: 8,
+            child: Container(
+              color: Colors.grey[400],
+              child: Center(
+                child: Text(
+                  'ACTA DE NO CONFORMIDAD',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ),
+          // Botones de Cancelar y Enviar
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    // Volver a la página anterior
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey[400],
+                  ),
+                  child: Text('CANCELAR'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // Lógica para enviar
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey[400],
+                  ),
+                  child: Text('ENVIAR'),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Página de no hay facturas
+class NoFacturasPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('LOGO EMPRESA'),
+            Text('FACTURAS'),
+            Icon(Icons.menu),
+          ],
+        ),
+      ),
+      body: Center(
+        child: Text(
+          'No hay Facturas pendientes',
+          style: TextStyle(fontSize: 20),
+        ),
+      ),
+    );
+  }
+}
+

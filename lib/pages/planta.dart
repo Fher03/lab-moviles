@@ -1,6 +1,6 @@
+import 'package:facturation_app/pages/facturas_pendientes.dart';
 import 'package:flutter/material.dart';
-import 'package:facturation_app/pages.dart/crear-factura.dart';
-import 'package:facturation_app/pages.dart/factura.dart';
+import 'package:facturation_app/pages/crear-factura.dart';
 
 // Pantalla "Planta" con dos botones grandes
 class PlantaScreen extends StatelessWidget {
@@ -55,7 +55,7 @@ class PlantaScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FacturaApp(),
+                      builder: (context) => FacturasPendientesView(),
                     ),
                   );
                 },

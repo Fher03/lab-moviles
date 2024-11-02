@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:facturation_app/pages.dart/planta.dart';
+import 'package:facturation_app/pages/planta.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
